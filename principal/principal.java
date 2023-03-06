@@ -1,39 +1,47 @@
 package principal;
 
+import java.util.Scanner;
+
 public class principal {
 	public static void main(String[] args) {
+		Scanner ler = new Scanner(System.in);
 		
+		Pessoa pessoa = new Pessoa();
+		
+		System.out.println("Nome" + pessoa.getNome());
+		
+		Aluno alu = new Aluno();
+		
+		System.out.println("Informe o nome");
+		alu.setNome(ler.nextLine());
+		
+		System.out.println("Informe a idade");
+		alu.setIdade(ler.nextInt());
+		
+		
+		System.out.println("Informe o peso");
+		alu.setPeso(ler.nextDouble()); 
+		
+		System.out.println("Informe a altura");
+		alu.setAltura(ler.nextDouble());
+		
+		double imc = alu.getIMC();
+		
+		System.out.println("O aluno é bolsista ?");
+		alu.setBolsista(ler.nextBoolean());
+		
+		System.out.println("Informe a matricula ");
+		alu.setMatricula(ler.nextInt());
+		
+		ler.nextLine();
+		
+		System.out.println("Informe o Curso");
+		alu.setCurso(ler.nextLine());
+		
+		System.out.println("======RESULTADO=======");
+	    System.out.println("Nome: " + alu.getNome());
+	    System.out.println("IMC: " + imc);
 
-		//get
-		
-		Empresa empresa = new Empresa("IFSP", 8);
-		Funcionario calcula = new Funcionario("Gustavo", 1000, false, empresa);
-		System.out.println("=======EMPRESA========");
-		System.out.println("Nome: " + calcula.getEmpresa().getNome());
-		System.out.println("Quantidade de Funcionarios: " + calcula.getEmpresa().getQtdFunc());
-		
-		System.out.println("=======FUNCIONARIO========");
-		System.out.println("Nome: " + calcula.getNome());
-		System.out.println("É PJ?: " + calcula.getPJ());
-		System.out.println("Salario: " + calcula.getSalario());
-		
-		
-		Funcionario calcula2 = new Funcionario();
-		calcula2.getEmpresa().setNome("CEUNSP");
-		calcula2.getEmpresa().setQtdFunc(10);
-		
-		calcula2.setNome("Nicolas");
-		calcula2.setPJ(true);
-		calcula2.setsalBruto(2000);
-		
-		System.out.println("=======EMPRESA========");
-		System.out.println("Nome: " + calcula2.getEmpresa().getNome());
-		System.out.println("Quantidade de Funcionarios: " + calcula2.getEmpresa().getQtdFunc());
-		
-		System.out.println("=======FUNCIONARIO========");
-		System.out.println("Nome: " + calcula2.getNome());
-		System.out.println("É PJ?: " + calcula2.getPJ());
-		System.out.println("Salario: " + calcula2.getSalario());
-		
+		System.out.println("Matirucla: " +alu.getMatricula());
 	}
 }
